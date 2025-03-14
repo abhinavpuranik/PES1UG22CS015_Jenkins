@@ -5,7 +5,8 @@ pipeline{
     stage('Build'){
       steps{
         script{
-          sh 'g++ -o program program.cpp'
+          sh 'g++ -o program non_existent_file.cpp'
+
         }
       }
     }
@@ -17,7 +18,7 @@ pipeline{
       }
     }
     stage('Deploy'){
-      steps
+      steps{
         echo 'Deploying the application'
       }
     
